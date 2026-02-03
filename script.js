@@ -17,10 +17,12 @@ noBtn.addEventListener("click", () => {
 yesBtn.addEventListener("click", () => {
   main.classList.add("hidden");
   result.classList.remove("hidden");
-
-  song.volume = 0.5;
-  song.play();
-
+  if (song) {
+    song.volume = 0.4; // volumen suave
+    song.play().catch(err => {
+      console.warn("No se pudo reproducir el audio:", err);
+    });
+  }
   updateCountdown();
   setInterval(updateCountdown, 60000);
 });
