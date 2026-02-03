@@ -5,8 +5,25 @@ const result = document.getElementById("result");
 const song = document.getElementById("loveSong");
 const countdownEl = document.getElementById("countdown");
 
+let yesSize = 1.2;
 
 const dateOfTheDate = new Date("2026-02-14T18:00:00");
+
+noBtn.addEventListener("click", () => {
+  yesSize *= 1.3;
+  yesBtn.style.fontSize = yesSize + "rem";
+});
+
+yesBtn.addEventListener("click", () => {
+  main.classList.add("hidden");
+  result.classList.remove("hidden");
+
+  song.volume = 0.5;
+  song.play();
+
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+});
 
 function updateCountdown() {
   const now = new Date();
@@ -24,30 +41,3 @@ function updateCountdown() {
   countdownEl.textContent =
     `${days} días, ${hours} horas y ${minutes} minutos`;
 }
-
-// solo empieza después del SÍ
-yesBtn.addEventListener("click", () => {
-  updateCountdown();
-  setInterval(updateCountdown, 60000);
-});
-
-yesBtn.addEventListener("click", () => {
-  main.classList.add("hidden");
-  result.classList.remove("hidden");
-
-  song.volume = 0.5; // suavecito
-  song.play();
-});
-
-
-let yesSize = 1.2;
-
-noBtn.addEventListener("click", () => {
-  yesSize *= 1.3;
-  yesBtn.style.fontSize = yesSize + "rem";
-});
-
-yesBtn.addEventListener("click", () => {
-  main.classList.add("hidden");
-  result.classList.remove("hidden");
-});
