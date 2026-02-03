@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset = "UTF-8">
+        <title>💖 Te tengo una pregunta Importante 💖</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class ="container" id="main">
+            <h1>💘💘¿Quieres ser mi San Valentin?💘💘</h1>
+            <div class="buttons">
+                <button id ="yesBtn">SI</button>
+                <button id ="noBtn">NO</button>
+            </div>
+        </div>
+        <div class ="container hidden" id ="result">
+            <h2>💘</h2>
+            <p class ="message">
+                Estoy muy emocionado de compartir esta experiencia contigo.<br>
+                Me haces la persona mas especial y afortunada del mundo.<br><br>
+                Aqui iremos a disfrutar nuestro momento especial:
+            </p>
+            <a 
+            class ="map"
+            href = "https://www.google.com/maps/dir/Edificio+S%C3%A9ptimo,+7A+Avenida+131,+Cdad.+de+Guatemala+01001/Edificio+S%C3%A9ptimo,+7A+Avenida+131,+Cdad.+de+Guatemala+01001/@14.6233546,-90.4596732,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x8589a3a4bdc962e5:0x7ffaeb08cd2d632d!2m2!1d-90.5153896!2d14.621782!1m5!1m1!1s0x8589a3a4bdc962e5:0x7ffaeb08cd2d632d!2m2!1d-90.5153896!2d14.621782?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            >
+            📍 Ver ubicación
+        </a>
+        <p class ="extra">
+            Y si la vida nos regala algo mas, prometo improvisar contigo.
+        </p>
+        <p class="countdown-title">Falta poco para nuestro momento 💖</p>
+        <p id="countdown"></p>
+
+        </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <audio id="loveSong" src="{{ url_for('static', filename='music.mp3') }}"></audio>
+    </body>
+</html>
+
