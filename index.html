@@ -3,7 +3,7 @@
     <head>
         <meta charset = "UTF-8">
         <title>💖 Te tengo una pregunta Importante 💖</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class ="container" id="main">
@@ -27,6 +27,8 @@
             >
             📍 Ver ubicación
         </a>
+        <p class="countdown-title">Falta poco para nuestro momento 💖</p>
+        <p id="countdown"></p>
         <p class ="extra">
             Y si la vida nos regala algo mas, prometo improvisar contigo.
         </p>
@@ -34,8 +36,9 @@
         <p id="countdown"></p>
 
         </div>
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
-        <audio id="loveSong" src="{{ url_for('static', filename='music.mp3') }}"></audio>
+        <script src="script.js"></script>
+
+        <audio id="loveSong" src="music.mp3"></audio>
     </body>
 </html>
 
