@@ -6,6 +6,8 @@ const song = document.getElementById("loveSong");
 const countdownEl = document.getElementById("countdown");
 
 let yesSize = 1.2;
+let countdownInterval = null;
+
 
 const dateOfTheDate = new Date("2026-02-14T18:00:00");
 
@@ -24,7 +26,8 @@ yesBtn.addEventListener("click", () => {
     });
   }
   updateCountdown();
-  setInterval(updateCountdown, 60000);
+  countdownInterval = setInterval(updateCountdown, 1000);
+
 });
 
 function updateCountdown() {
@@ -32,14 +35,17 @@ function updateCountdown() {
   const diff = dateOfTheDate - now;
 
   if (diff <= 0) {
-    countdownEl.textContent = "Ya llegó el momento 💕";
+    clearInterval(countdownInterval);
+    countdownEl.textContent = "Ya es tiempo de empezar esta historia 💖";
     return;
   }
+  
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
 
   countdownEl.textContent =
-    `${days} días, ${hours} horas y ${minutes} minutos`;
+  `${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos`;
 }
